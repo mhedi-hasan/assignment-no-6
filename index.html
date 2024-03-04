@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReTro Trending Website</title>
+    <!-- font-awesome-cdn-link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- daisyUi-cdn-link -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom-css-link -->
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <!-- header-section-start-here -->
+    <header class="lg:mx-24 mulish-font pt-6">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start w-full">
+              <div class="dropdown">
+                <ul class=" text-3xl dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box">
+                  <li><a><i class="fa-solid fa-house-user"></i></a></li>
+                  <li><a><i class="fa-solid fa-pen"></i></a></li>
+                  <li><a><i class="fa-regular fa-user-plus"></i></a></li>
+                  <li><a><i class="fa-regular fa-flag"></i></a></li>
+                </ul>
+              </div>
+              <img src="./images/logo.png" alt="">
+              <!-- <a class="font-extrabold text-3xl">ReTro</a> -->
+            </div>
+            <div class="navbar-end">
+                <div class=" hidden lg:flex">
+              <ul class="flex gap-6  text-[17px] cursor-pointer mr-10 justify-end w-full px-1">
+                <div class="tooltip" data-tip="Home">
+                  <li><i class="w-12 h-12 bg-base-100 border-[1px] border-opacity-65 bg-slate-200 border-black drop-shadow-2xl rounded-full flex justify-center items-center fa-solid fa-house-user"></i></li>
+                </div>
+                <div class="tooltip" data-tip="Pen">
+                  <li><i class="w-12 h-12 bg-base-100 border-[1px] border-opacity-65 bg-slate-200 border-black drop-shadow-2xl rounded-full flex justify-center items-center fa-solid fa-pen"></i></li>
+                </div>
+                <div class="tooltip" data-tip="User">
+                  <li><i class="w-12 h-12 bg-base-100 border-[1px] border-opacity-65 bg-slate-200 border-black drop-shadow-2xl rounded-full flex justify-center items-center fa-solid fa-user-plus"></i></li>
+                </div>
+                <div class="tooltip" data-tip="Card">
+                  <li><i class="w-12 h-12 bg-base-100 border-[1px] border-opacity-65 bg-slate-200 border-black drop-shadow-2xl rounded-full flex justify-center items-center fa-regular fa-flag"></i></li>
+                </div>
+              </ul>
+            </div>
+              <a class="btn text-[16px] rounded-full bg-[#797DFC] px-7 text-white font-bold">Sign in</a>
+            </div>
+          </div>
+    </header>
+    <!-- header-section-end-here -->
+    <!-- main-section-start-here -->
+    <main class="lg:mx-24 mx-3">
+        <!-- banner section start here -->
+        <section class="relative pt-8">
+            <div class="hero flex flex-col lg:flex-row items-center lg:space-x-20 bg-[#12132D] raleway-font rounded-3xl pt-12 pb-5 object-bottom"
+              style="background-image: url(./images/bgbanner.png)">
+              <div></div>
+              <div class="hero-content text-start text-white ">
+                <div class="lg:pb-14">
+                  <h1 class="mb-5 lg:leading-[75px] leading-[55px] text-center lg:text-start text-4xl lg:text-[67px] font-bold">Welcome to the <br> <span class="text-[#7074EA]">ReTro</span> Forum</h1>
+                  <p class="text-[17px] lg:text-start text-center lg:leading-8 mulish-font">Share your favorite opinion  favorite opinion and win and wp <br> forum coffee mug!.</p>
+                    <label class="input mt-5 sm:mx-auto rounded-full lg:w-[390px] w-[96%] flex lg:gap-20 gap-1 items-center">
+                      <input id="search-field" type="text"  class="rounded-full text-black" placeholder="Search here anything" />
+                      <a href="#loading-spinner"><button onclick="handleSearch()" class="text-[16.5px] active:bg-[#121562] hover:bg-[#2a30e3] py-2 rounded-full bg-[#6b70f0] lg:px-7 px-4 text-white font-bold">Search</button></a>
+                    </label>
+                </div>
+              </div>
+              <!-- 2nd part -->
+              <div class="bg-white flex text-[#414257] px-10 py-8 rounded-xl text-[22px] mulish-font">
+                <ul class="space-y-4">
+                  <li>Registered Users</li>
+                  <li>Forum</li>
+                  <li>Topics</li>
+                  <li>Replies</li>
+                </ul>
+                <ul class="space-y-4">
+                  <li>01</li>
+                  <li>05</li>
+                  <li>01</li>
+                  <li>01</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- banner section end here -->
+          <!-- Let's-Discuss-section-start-here -->
+          <section class="mt-16 mb-16">
+            <div class="text-center mb-10">
+              <h1 class="text-4xl font-bold">Let's Discuss</h1>
+              <p class="text-[17px] opacity-65 pt-4 mulish-font">Yes, you can run unit tests and view the results directly within the app. The <br>integrated testing features allow for a streamlined .</p>
+            </div>
+            <!-- spinner or loader -->
+            <div id="loading-spinner" class="hidden text-center py-52 mx-8 drop-shadow-2xl bg-gray-100">
+              <span class="loading loading-spinner loading-lg"></span></div>
+            <!-- card section -->
+            <div class="flex flex-col lg:flex-row gap-5">
+              <div class="lg:w-2/3 w-full" id="retro-container"></div>
+              <div  class="bg-[#F3F3F5] py-6 mt-3 px-8 h-auto lg:w-1/3 w-full rounded-3xl">
+                <div class="flex space-x-20">
+                  <h1 class="text-2xl font-bold justify-between inner-font">Title</h1>
+                <div class="flex gap-1 w-full">
+                  <i class="fa-solid text-[20px] text-[#74e74e] fa-check-double"></i>
+                  <p class="text-[17px] mulish-font opacity-75">Mark as read (<span id="zero">0</span>)</p>
+                </div>
+                </div>
+                <div class="mt-4" id="append-container"></div>
+              </div>
+              <!-- append div -->
+            </div>
+            <!-- Forum-section-start-here -->
+            <section class="justify-around mt-16 px-7 py-8  rounded-3xl items-center flex flex-col lg:flex-row bg-[#12132D] text-white">
+              <div class="space-y-5">
+                <h1 class="font-bold inner-font text-[35px]">Join Our Forum</h1>
+                <p class="inner-font opacity-70">Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br>run unit tests and view the results directly within the app.</p>
+                <button class="btn border-none text-[16px] rounded-full bg-[#797DFC] px-7 text-white font-bold">Registered Now</button>
+              </div>
+              <div>
+                <img class="object-contain lg:pt-0 pt-10" src="./images/joinforum.png" alt="">
+              </div>
+            </section>
+            <!-- Forum-section-end-here -->
+            <!-- Latest-posts-section-start-here -->
+            <section class="mt-16 flex flex-col justify-center items-center mb-24">
+              <div class="text-center mb-10">
+                <h1 class="text-4xl font-bold">Latest Posts</h1>
+                <p class="text-[17px] opacity-65 pt-4 mulish-font">Yes, you can run unit tests and view the results directly within the app. The <br>integrated testing features allow for a streamlined .</p>
+              </div>
+              <!-- card-section -->
+              <div class="grid lg:grid-cols-3 lg:gap-12 gap-7 grid-cols-1 " id="retro-container2">
+              </div>
+            </section>
+            <!-- Latest-posts-section-end-here -->
+          </section>
+          <!-- Let's-Discuss-section-end-here -->
+    </main>
+    <!-- main-section-end-here -->
+    <!-- footer-section-start-here -->
+        <footer class="space-y-4 w-full mt-10 justify-center items-center flex flex-col footer-center p-10 bg-base-200 text-base-content">
+            <img src="./images/logo.png" alt="">
+            <p>Thank you for Booking Our Bus Seats.<br />We are working hard 
+                the best service and deals for you.</p>
+            <nav>
+               <ul class="flex space-x-4 pb-2 text-2xl">
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-facebook-f"></i></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
+                <li><i class="fa-brands fa-github"></i></li>
+               </ul>
+            </nav>
+            <p class="border-dotted opacity-45   w-3/4 border-black border-[1px]"></p>
+            <aside>
+              <p class="text-[15px] pt-3 opacity-75 inner-font">2017, All Rights Reserved.</p>
+            </aside>
+        </footer>
+    <!-- footer-section-end-here -->
+    <!-- javascript-link -->
+    <script src="./javascript/script.js"></script>
+</body>
+</html>
